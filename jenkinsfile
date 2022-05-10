@@ -9,13 +9,14 @@ def getBuildUser(){
 return currentBuild.rawBuild.getCause(Cause.UseridCause).getUserid()
 }
 pipeline{
+
     agent any
 
     parameters{
           string(name: "SPEC", defaultValue: "cypress/integration/**/**", description: "Tailor account":"cypress/integration/POM/.spec.js""
 choice(name: "BROWSER", choices: ["chrome", "firefox", "edge"], description: "Different browsers")
     }
-options 
+options {
 
 ansiColor('Xterm')
 {
@@ -32,7 +33,8 @@ ansiColor('Xterm')
                         }
         }
         stage('Deploy') {
-            steps {
+          
+             steps {
                'echo 'Deployong the application'
         }
         }
@@ -47,7 +49,8 @@ slackSend channel: '#fitted-git-dev-qa'
 color: COLOR_MAP[currentBuild.currentResult], 
 message: "'${currentBuild.currentResult}:' ${env.JOB_NAME} build ${env.BUILD_NUMBER} BY ${BUILD_USER} \n Tests: ${SPEC} executed ${BROWSER} \n More information at: ${env.BUILD_URL}HTML_20Report/"
 
-always {publishHTML(allowMissing:false, alwayslinktoLastBuild:false, keepAll:true, reportDir : 'cypress/report', reportfiles : 'index.html' 
+always {
+     publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'cypress/report', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '']) 
 
 
             }
