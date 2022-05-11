@@ -35,7 +35,7 @@ ansiColor('Xterm')
         stage('Deploy') {
           
              steps {
-               'echo 'Deployong the application'
+               'echo 'Deploying the application'
         }
         }
         }
@@ -44,7 +44,7 @@ ansiColor('Xterm')
              always{
             script{
 BUILD_USER = getBuildUser()
-}
+     }
 slackSend channel: '#fitted-git-dev-qa'
 color: COLOR_MAP[currentBuild.currentResult], 
 message: "'${currentBuild.currentResult}:' ${env.JOB_NAME} build ${env.BUILD_NUMBER} BY ${BUILD_USER} \n Tests: ${SPEC} executed ${BROWSER} \n More information at: ${env.BUILD_URL}HTML_20Report/"
