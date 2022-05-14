@@ -25,7 +25,7 @@ const user = {
                      "password": "go@12345"
                    }
                }).then((res)=>{
-                     // cy.log(res.body.token)
+                     cy.log(res.body.token)
                      expect(res.status).to.eq(201)
                })
          })
@@ -46,4 +46,50 @@ const user = {
                 
            })
      })
+     it('Login with incorrect password', () => {
+      cy.request({
+              method: 'POST',
+              failOnStatusCode: false,
+              url: user.lgurl_01,
+              body: {
+                  "email": "ezenwathecla90+9#gmail.com",
+                  "password": "go@977"
+                }
+      }).then((res)=>{
+            expect(res.status).to.eq(400)
+            expect(res.body.error).to.eq('Bad Request')
+           })
+})
+
+it('Login without password', () => {
+      cy.request({
+              method: 'POST',
+              failOnStatusCode: false,
+              url: user.lgurl_01,
+              body: {
+                  "email": "ezenwathecla90+9#gmail.com",
+                  "password": ""
+                }
+      }).then((res)=>{
+            expect(res.status).to.eq(400)
+            expect(res.body.error).to.eq('Bad Request')
+           
+})
+})
+
+it('Login without email', () => {
+      cy.request({
+              method: 'POST',
+              failOnStatusCode: false,
+              url: user.lgurl_01,
+              body: {
+                  "email": "",
+                  "password": "go@12345"
+                }
+      }).then((res)=>{
+            expect(res.status).to.eq(400)
+            expect(res.body.error).to.eq('Bad Request')
+           
+})
+})
      

@@ -25,7 +25,7 @@ class RandText {
     test4 = randText;
     testEmail = randText + '@gmail.com';
     phoneNumb = '+23480' + randNumb;
-    cardNumb = '55' + randNumb1;
+    measureNumb = '2356' + randNumb1;
     cvcNumb = '1' + randNumb2; 
     codeNumb = '900'+ randNumb3;
     feeNumb = '0.0'+ randNumb5;
