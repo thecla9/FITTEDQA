@@ -19,8 +19,8 @@ describe('AUTH: Tailor Create Account (POST)', () => {
   
             body: {
 
-                    "firstName": "Thelma",
-                    "lastName": "Promise",
+                    "firstName": varText.test,
+                    "lastName": varText.test,
                     "email": varText.testEmail,
                     "phoneNumber": varText.phoneNumb,
                     "password": "go@12345",

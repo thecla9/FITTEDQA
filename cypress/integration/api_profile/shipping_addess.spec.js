@@ -64,7 +64,7 @@ it('Create shipping address with invalid user id', () => {
 }
         }).then((res)=>{
               expect(res.status).to.eq(401)
-              expect(res.body.error).to.eq('Bad Request')
+              expect(res.body.error).to.eq('undefined')
               
         })
   })
