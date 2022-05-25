@@ -8,7 +8,7 @@ const user = {
     
 };
  
-   //CREATE GROUP: Get outfitbuyer details with Valid Credentails
+   //CREATE GROUP: create a group with Valid Credentails
 describe('create a group: with Valid Credentails (POST)', () => {
 
     it('Create a group using valid credentails', () => {
@@ -17,7 +17,7 @@ describe('create a group: with Valid Credentails (POST)', () => {
             method: 'POST',
           url: user.adgrpurl_01,
           headers: {
-            "authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV6ZW53YXRoZWNsYTkwKzhAZ21haWwuY29tIiwic3ViIjoiNjI3ZGI4MWJhY2U0Y2QwMDNmZjU0MDRmIiwicGhvbmVOdW1iZXIiOiIrMjM0NzAzNDU2MDc4NiIsImlhdCI6MTY1MjcwNzI2MiwiZXhwIjoxNjUyNzkzNjYyfQ.N1Yw7ZJ1wOIjmzHzVTT4dwwFlfNt9q_zNaZ88Q6LUmk",
+            "authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV6ZW53YXRoZWNsYTkwKzhAZ21haWwuY29tIiwic3ViIjoiNjI3ZGI4MWJhY2U0Y2QwMDNmZjU0MDRmIiwicGhvbmVOdW1iZXIiOiIrMjM0NzAzNDU2MDc4NiIsImlhdCI6MTY1Mjk5ODU4MCwiZXhwIjoxNjUzMDg0OTgwfQ.xoLVTa926FNSzC69H3AOmhTfY3NRwlLuyx0QfttUOS8",
             "content-type": "application/json"
       },
 
@@ -39,7 +39,7 @@ describe('create a group: with Valid Credentails (POST)', () => {
           })
   });
 
-  it('Get Outfitbuyer details using invalid credentails', () => {
+  it('Create a group  using invalid credentails', () => {
         cy.request({
                 method: 'POST',
                 failOnStatusCode: false,
@@ -61,7 +61,8 @@ describe('create a group: with Valid Credentails (POST)', () => {
         
 
         }).then((res)=>{
-              expect(res.status).to.eq(404)
+              expect(res.status).to.eq(401)
+              expect(res.body.message).to.eq("Unauthorized")
               
         })
   })
