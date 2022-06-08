@@ -13,7 +13,7 @@
     "baseUrl": "https://group-orders-backend.herokuapp.com",
 
     "env": {
-          "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV6ZW53YXRoZWNsYTkwKzlAZ21haWwuY29tIiwic3ViIjoiNjI3M2QxYTY4OGJmZDMwMDNmZGQ3YWZjIiwicGhvbmVOdW1iZXIiOiIrMjM0NzAzODMzMDc4NCIsImlhdCI6MTY1MjEyNjg2NSwiZXhwIjoxNjUyMjEzMjY1fQ.hhcF7trHNi7QAejNWR8rhemyMVH6bHJt1tPg6txM6PI"
+          "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV6ZW53YXRoZWNsYTkwKzlAZ21haWwuY29tIiwic3ViIjoiNjI3M2QxYTY4OGJmZDMwMDNmZGQ3YWZjIiwicGhvbmVOdW1iZXIiOiIrMjM0NzAzODMzMDc4NCIsImlhdCI6MTY1NDY1MDEwMiwiZXhwIjoxNjU0NzM2NTAyfQ.kWcOskX9KQb2qheUXjZm_que70xq_U_heouAyp9-bxw"
         }
      
       }

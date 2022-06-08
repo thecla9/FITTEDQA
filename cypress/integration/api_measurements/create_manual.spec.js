@@ -1,4 +1,4 @@
-/// <reference types="Cypress" />
+""/// <reference types="Cypress" />
 import RandText from '../POM/RandText';
 
 
@@ -25,9 +25,9 @@ describe('CREATE MANUAL : manual measurement creation (POST)', () => {
             body: {
                 "gender": "male",
                 "group": "",
-                "portal": "outfitbuyer",
+                "portal": "tailor",
                 "name": varText.test,
-                "userEmail": varText.email,
+                "userEmail": "ezenwathecla90+9@gmail.com",
                 "neck": "10",
                 "wrist": "10",
                 "sleeveLength":"10",
