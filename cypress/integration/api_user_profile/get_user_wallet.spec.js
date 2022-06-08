@@ -10,7 +10,7 @@ const user = {
      
    };
    // Get user wallet
-   describe('GET OUTFITBUYER USER WALLET: (GET)', () => {
+   describe('GET TAILOR USER WALLET: (GET)', () => {
        it('Get User Wallet', () => {
              cy.request({
                    method: 'GET',
